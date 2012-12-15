@@ -16,3 +16,18 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# RubyMotion
+.repl_history
+build
+tags
+resources/*.nib
+resources/*.momd
+resources/*.storyboardc
+.DS_Store
+nbproject
+.redcar
+#*#
+*~
+*.sw[po]
+.eprj
