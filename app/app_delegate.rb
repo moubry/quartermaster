@@ -7,8 +7,9 @@ class AppDelegate
     # alert.show
     # App.alert("BubbleWrap is awesome!")
 
-    @window = UIWindow.alloc.initWithFrame UIScreen.mainScreen.bounds
-    @window.rootViewController = GoogleViewController.alloc.init
+    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    # @window.rootViewController = DecksController.alloc.init
+    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(DecksController.alloc.init)
     @window.makeKeyAndVisible
 
     true
