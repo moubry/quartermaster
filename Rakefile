@@ -11,4 +11,6 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'sundown'
   end
+  app.icons = ["Icon.png", "Icon-57.png", "Icon@2x.png"]
+  app.prerendered_icon = true
 end
