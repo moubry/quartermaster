@@ -20,9 +20,14 @@ Neuroscientists sometimes categorize intelligence into two factors:
 1. fluid intelligence
 2. crystallized intelligence
 
-http://en.wikipedia.org/wiki/Fluid_and_crystallized_intelligence
-
 The first one sounds pretty awesome, right? We all want lots of that. And there are plenty of apps to help with that. Crystal focuses on the second one - crystallized intelligence. It's for accumulating and then cementing *volumes* of knowledge. That's what we want to build here.
+
+Human memory is unlimited. Take advantage.
+
+##### Read more:
+
+- [How Memory Works - HowStuffWorks.com](http://science.howstuffworks.com/life/inside-the-mind/human-brain/human-memory2.htm)
+- [Fluid and crystallized intelligence - Wikipedia.org](http://en.wikipedia.org/wiki/Fluid_and_crystallized_intelligence)
 
 ### Flashcards As Supplemental Content
 
