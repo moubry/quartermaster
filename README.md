@@ -28,6 +28,7 @@ Human memory is unlimited. Take advantage.
 
 - [How Memory Works - HowStuffWorks.com](http://science.howstuffworks.com/life/inside-the-mind/human-brain/human-memory2.htm)
 - [Fluid and crystallized intelligence - Wikipedia.org](http://en.wikipedia.org/wiki/Fluid_and_crystallized_intelligence)
+- [New Brain Connections Are Created Every Time You Form a Memory - About.com](http://psychology.about.com/od/memory/ss/ten-facts-about-memory_9.htm)
 
 ### Flashcards As Supplemental Content
 
