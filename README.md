@@ -23,7 +23,11 @@ From the New Oxford American Dictionary:
 
 James Bond had a quartermaster and his name was Q.
 
-We want this app to be your own personal quartermaster—equipping you with the mental supplies needed to get the job done.
+I want this app to be your own personal quartermaster—equipping you with the mental supplies needed to get the job done.
+
+### Feature Requests
+
+I wanted to make an app that did nothing fancy, but did everything right. If you feel your feature is inline with that goal, then please email me at features@quartermaster.io—and thank you!
 
 ### Science
 
