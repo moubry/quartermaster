@@ -13,6 +13,18 @@ You've been there. Maybe it's at work: you see a fellow developer write some ver
 
 Or maybe you're in a technical interview for a job. Never has knowing a technical nuance been more critical to acquiring happiness.
 
+### What's with the name?
+
+From the New Oxford American Dictionary:
+
+> **quartermaster** *|ˈkwôrtərˌmastər|*  
+  noun  
+  1. a military officer responsible for providing quarters, rations, clothing, and other supplies.
+
+James Bond had a quartermaster and his name was Q.
+
+We want this app to be your own personal quartermaster—equipping you with the mental supplies needed to get the job done.
+
 ### Science
 
 Neuroscientists sometimes categorize intelligence into two factors:
