@@ -62,6 +62,11 @@ This is marketing. Don't you want
 
 ## Upcoming Features
 
+- Syntax highlighting
+- SuperMemo
+- Game Center
+- Content platform (store, sell your decks)
+- Dropbox
 - Sidebar references
 - Footnotes
 - Embedding Gists
