@@ -63,6 +63,7 @@ This is marketing. Don't you want
 ## Upcoming Features
 
 - Syntax highlighting
+- Bios built into the platform—like The Magazine
 - SuperMemo
 - Game Center
 - Content platform (store, sell your decks)
