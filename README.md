@@ -59,3 +59,11 @@ Consider it part of your documentation.
 Tomes of knowledge exist throughout the open source world. Reference documents.
 
 This is marketing. Don't you want 
+
+## Upcoming Features
+
+- Sidebar references
+- Footnotes
+- Embedding Gists
+- MSDN
+- MDN
