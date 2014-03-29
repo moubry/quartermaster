@@ -34,3 +34,8 @@ nbproject
 .eprj
 
 vendor/Pods
+
+# debugging files
+resources/MacBookAir.png
+resources/iPad.png
+resources/iPhone.png
