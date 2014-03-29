@@ -17,8 +17,8 @@ Or maybe you're in a technical interview for a job. Never has knowing a technica
 
 From the New Oxford American Dictionary:
 
-> **quartermaster** *|ˈkwôrtərˌmastər|*  
-  noun  
+> **quartermaster** *|ˈkwôrtərˌmastər|*
+  noun
   1. a military officer responsible for providing quarters, rations, clothing, and other supplies.
 
 James Bond had a quartermaster and his name was Q.
@@ -50,7 +50,7 @@ Human memory is unlimited. Take advantage.
 
 You've written a blog post or a book. You're trying to communicate information. You stress and struggle over making the ideas you're trying to communicate sticky. How do I present this information in a well the reader will remember?
 
-Flashcards 
+Flashcards
 
 ### Open Source Projects Should Have Flash Cards
 
@@ -58,7 +58,7 @@ Consider it part of your documentation.
 
 Tomes of knowledge exist throughout the open source world. Reference documents.
 
-This is marketing. Don't you want 
+This is marketing! Don't you want?
 
 ## Upcoming Features
 
