@@ -62,6 +62,7 @@ This is marketing! Don't you want?
 
 ## Upcoming Features
 
+- Open URLs in Safari
 - Syntax highlighting
 - Bios built into the platform—like The Magazine
 - SuperMemo
