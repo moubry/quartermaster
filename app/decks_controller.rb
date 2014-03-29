@@ -66,7 +66,7 @@ class DecksController < UITableViewController
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     deck = @decks[indexPath.row]
 
-    detail_controller = DeckViewController.alloc.init
+    detail_controller = SheetViewController.alloc.init
     detail_controller.selected_file(deck.filename)
     self.navigationController.pushViewController(detail_controller, animated:true)
 
