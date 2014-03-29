@@ -24,6 +24,7 @@ tags
 resources/*.nib
 resources/*.momd
 resources/*.storyboardc
+resources/decks
 .DS_Store
 nbproject
 .redcar
