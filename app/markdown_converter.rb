@@ -1,10 +1,14 @@
 class MarkdownConverter
 
-  def self.file_to_html(filename)
+  def self.url_to_html(url)
+    raise 'not implemented'
+    # [self.webView loadHTMLString:htmlContent baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     # url = NSURL.URLWithString("http://www.google.com/")
     # request = NSURLRequest.requestWithURL(url)
     # self.view.loadRequest request
+  end
 
+  def self.file_to_html(filename)
     error_ptr = Pointer.new(:object)
 
     md = NSString.stringWithContentsOfFile(

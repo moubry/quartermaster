@@ -23,7 +23,6 @@ class SheetViewController < UIViewController
   def viewDidAppear(animated)
     html_content = MarkdownConverter.file_to_html(@filename)
     self.view.loadHTMLString(html_content, baseURL:nil)
-    # [self.webView loadHTMLString:htmlContent baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
   end
 
   def selected_file(filename)
