@@ -21,6 +21,7 @@ class AppDelegate
     # @window.rootViewController = DeckViewController.alloc.init
     # @window.rootViewController = DeckViewController.new
 
+    @window.rootViewController.wantsFullScreenLayout = true
     true
   end
 
