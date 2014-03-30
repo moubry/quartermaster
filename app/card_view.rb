@@ -3,33 +3,26 @@
 #
 class CardView
 
-  def self.create(markdown)
-    webview = UIWebView.alloc.init
+  def self.create(markdown, frame)
+    webview = UIWebView.alloc.initWithFrame(frame)
     webview.clipsToBounds = true
 
     html = get_html_from_markdown(markdown)
     add_html_to_webview(webview, html)
   end
 
-  def self.get_html_from_markdown(markdown)
-    error_ptr = Pointer.new(:object)
-
-    md = NSString.stringWithContentsOfFile(
-      markdown,
-      encoding:NSUTF8StringEncoding,
-      error:error_ptr
-    )
-
-    error = error_ptr[0]
-
+  def self.get_html_from_markdown(html)
     head = '
     <head>
-      <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <style>
+        * { box-sizing: border-box; }
+        html {
+          background-color: rgb(232, 196, 231);
+        }
         body {
           word-wrap:break-word;
-          padding:15px;
-          margin:0;
+          padding: 0;
+          margin: 0;
           font-family:Georgia;
         }
         h1, h2, h3, h4, h5 {
@@ -38,17 +31,16 @@ class CardView
         pre, code {
           font-family:Courier;
         }
+        .card {
+          //color: #edc;
+          //background-color: #422;
+          padding: 10px;
+        }
       </style>
     </head>
     '
 
-    if md
-      html_content = head + SundownWrapper.convertMarkdownString(md)
-    elsif error
-      html_content = '<h1>Ugh, an error.</h1><blockquote>' + error.class.to_s + ' - ' + error.description.to_s + '</blockquote>'
-    else
-      html_content = 'You should never get here.'
-    end
+    html_content = "#{head} <div class=\"card\">#{html}</div>"
   end
 
   def self.add_html_to_webview(webview, html)
