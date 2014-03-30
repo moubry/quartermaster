@@ -26,27 +26,7 @@ class MarkdownConverter
   end
 
   def self.markdown_to_html(markdown)
-    head = '
-    <head>
-      <meta name="viewport" content="width=device-width,initial-scale=1.0">
-      <style>
-        body {
-          word-wrap:break-word;
-          padding:15px;
-          margin:0;
-          font-family:Georgia;
-        }
-        h1, h2, h3, h4, h5 {
-          font-family:Avenir;
-        }
-        pre, code {
-          font-family:Courier;
-        }
-      </style>
-    </head>
-    '
-
-    head + SundownWrapper.convertMarkdownString(markdown)
+    SundownWrapper.convertMarkdownString(markdown)
   end
 
 end
