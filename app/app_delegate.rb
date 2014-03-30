@@ -14,7 +14,10 @@ class AppDelegate
     # @window.rootViewController = DecksController.alloc.init
 
     # the production app path
-    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(DecksController.alloc.init)
+    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(
+      # loads a table view for choosing from a list of decks
+      DecksController.alloc.init
+    )
     # @window.makeKeyAndVisible
 
     # debugging the deck view controller
