@@ -10,6 +10,7 @@ Motion::Project::App.setup do |app|
   app.identifier = 'com.moubry.quartermaster'
   app.pods do
     pod 'sundown'
+    pod 'RaptureXML'
   end
   app.icons = ["Icon.png", "Icon-57.png", "Icon@2x.png"]
   app.prerendered_icon = true

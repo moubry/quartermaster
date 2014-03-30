@@ -41,6 +41,7 @@ class SheetViewController < UIViewController
     </head>
     '
     html_content = head + MarkdownConverter.file_to_html(@filename)
+    html_content = MarkdownConverter.get_first_card(html_content)
     self.view.loadHTMLString(html_content, baseURL:nil)
   end
 

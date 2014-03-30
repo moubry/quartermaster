@@ -8,7 +8,7 @@ class MarkdownConverter
     # self.view.loadRequest request
   end
 
-  def self.file_to_html(filename)
+  def self.file_to_markdown(filename)
     error_ptr = Pointer.new(:object)
 
     md = NSString.stringWithContentsOfFile(
@@ -17,16 +17,33 @@ class MarkdownConverter
       error:error_ptr
     )
 
-    error = error_ptr[0]
-    if error
-      return "<h1>Ugh, an error.</h1><blockquote>" + error.class.to_s + ' - ' + error.description.to_s+ "</blockquote>"
+    if error = error_ptr[0]
+      return markdown_for_error(error)
     end
 
-    markdown_to_html(md)
+    md
+  end
+
+  def self.file_to_html(filename)
+    md = file_to_markdown(filename)
+    html = markdown_to_html(md)
+  end
+
+  def self.get_first_card(html)
+    tags = []
+    rxml = RXMLElement.elementFromXMLString('<html>' + html + '</html>', encoding:NSUTF8StringEncoding)
+    rxml.iterate('*', usingBlock:lambda { |e| puts e.text })
+    html
   end
 
   def self.markdown_to_html(markdown)
     SundownWrapper.convertMarkdownString(markdown)
+  end
+
+  def self.markdown_for_error(error)
+"# Ugh, an error.
+
+> #{error.class.to_s} - #{error.description.to_s}"
   end
 
 end

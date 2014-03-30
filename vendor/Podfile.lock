@@ -1,10 +1,13 @@
 PODS:
+  - RaptureXML (1.0.1)
   - sundown (0.1.0)
 
 DEPENDENCIES:
+  - RaptureXML
   - sundown
 
 SPEC CHECKSUMS:
+  RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
   sundown: f0b86bd08ee36f84e9e6a6332d3cbd0309889dfa
 
 COCOAPODS: 0.29.0
