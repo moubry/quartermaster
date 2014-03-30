@@ -66,11 +66,19 @@ class DecksController < UITableViewController
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     deck = @decks[indexPath.row]
 
-    detail_controller = SheetViewController.alloc.init
+    detail_controller = load_deck_detail_view_controller
     detail_controller.selected_file(deck.filename)
     self.navigationController.pushViewController(detail_controller, animated:true)
 
     tableView.deselectRowAtIndexPath(indexPath, animated:true)
+  end
+
+  def load_deck_detail_view_controller
+    # load the cheat sheet view
+    SheetViewController.alloc.init
+
+    # load the swipey card view
+    # DeckViewController.alloc.init
   end
 
     # font_dict = fonts[indexPath.section]
