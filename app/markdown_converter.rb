@@ -30,9 +30,18 @@ class MarkdownConverter
   end
 
   def self.get_first_card(html)
-    tags = []
-    rxml = RXMLElement.elementFromXMLString('<html>' + html + '</html>', encoding:NSUTF8StringEncoding)
-    rxml.iterate('*', usingBlock:lambda { |e| puts e.text })
+    doc = Wakizashi::HTML(html)
+    elz = doc.xpath('/html/body/*')
+
+    cards = []
+
+    elz.each do |e|
+      puts e.to_s
+      cards << e
+    end
+
+    html = cards.collect(&:to_html).join('')
+
     html
   end
 

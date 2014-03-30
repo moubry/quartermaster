@@ -1,13 +1,13 @@
 PODS:
-  - RaptureXML (1.0.1)
+  - GDataXML-HTML (1.1.0)
   - sundown (0.1.0)
 
 DEPENDENCIES:
-  - RaptureXML
+  - GDataXML-HTML
   - sundown
 
 SPEC CHECKSUMS:
-  RaptureXML: ef017fda62eb95c60300108366d1f0cd0c28cbd4
+  GDataXML-HTML: 281ea772a286241f860fa152cff5c7a7cd817336
   sundown: f0b86bd08ee36f84e9e6a6332d3cbd0309889dfa
 
 COCOAPODS: 0.29.0

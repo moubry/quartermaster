@@ -3,6 +3,7 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 require 'motion-cocoapods'
 require 'bubble-wrap'
+require 'wakizashi'
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
@@ -10,7 +11,7 @@ Motion::Project::App.setup do |app|
   app.identifier = 'com.moubry.quartermaster'
   app.pods do
     pod 'sundown'
-    pod 'RaptureXML'
+    pod 'GDataXML-HTML'
   end
   app.icons = ["Icon.png", "Icon-57.png", "Icon@2x.png"]
   app.prerendered_icon = true
