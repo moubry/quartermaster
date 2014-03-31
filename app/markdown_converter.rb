@@ -8,11 +8,19 @@ class MarkdownConverter
     # self.view.loadRequest request
   end
 
-  def self.file_to_markdown(filename)
+  def self.deck_file_to_html(filename)
+    file_to_html File.join(App.resources_path, 'decks', filename)
+  end
+
+  def self.deck_file_to_markdown(filename)
+    file_to_markdown File.join(App.resources_path, 'decks', filename)
+  end
+
+  def self.file_to_markdown(filepath)
     error_ptr = Pointer.new(:object)
 
     md = NSString.stringWithContentsOfFile(
-      App.resources_path + '/decks/' + filename,
+      filepath,
       encoding:NSUTF8StringEncoding,
       error:error_ptr
     )
@@ -29,20 +37,17 @@ class MarkdownConverter
     html = markdown_to_html(md)
   end
 
-  def self.get_first_card(html)
-    doc = Wakizashi::HTML(html)
+  # cards = []
+  # elz.each do |e|
+  #   puts e.to_s
+  #   cards << e
+  # end
+  # html = cards.collect(&:to_html).join('')
+  # html
+  def self.elements_from_html(html)
+    doc = Wakizashi::HTML('<html><body>' + html + '</body></html>')
     elz = doc.xpath('/html/body/*')
-
-    cards = []
-
-    elz.each do |e|
-      puts e.to_s
-      cards << e
-    end
-
-    html = cards.collect(&:to_html).join('')
-
-    html
+    elz
   end
 
   def self.markdown_to_html(markdown)

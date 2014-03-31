@@ -24,10 +24,6 @@ class DecksController < UITableViewController
     view.reloadData
   end
 
-  def get_list_of_files_in_decks
-    
-  end
-
   def get_results_data
     error_ptr = Pointer.new(:object)
     data = NSData.alloc.initWithContentsOfFile(
@@ -75,10 +71,10 @@ class DecksController < UITableViewController
 
   def load_deck_detail_view_controller
     # load the cheat sheet view
-    SheetViewController.alloc.init
+    # SheetViewController.alloc.init
 
     # load the swipey card view
-    # DeckViewController.alloc.init
+    DeckViewController.alloc.init
   end
 
     # font_dict = fonts[indexPath.section]

@@ -2,11 +2,11 @@ class DeckViewController < UIViewController
   def viewDidLoad
     super
 
-    # http://stackoverflow.com/questions/728014/uiscrollview-paging-horizontally-scrolling-vertically
-    # scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * NumberOfPages, 1);
+    cards = get_cards(@filename)
+    puts "got #{cards.count} cards"
 
     padding_between_cards = 40
-    number_of_pages = 3
+    number_of_pages = cards.count
     navbar_height = navigationController.navigationBar.frame.size.height
     puts "navbar height is #{navbar_height}"
 
@@ -23,16 +23,17 @@ class DeckViewController < UIViewController
     )
     view.addSubview(@my_scroll_view)
 
-    lorem = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tempus arcu. Morbi ut libero risus.</p>'
-    card1 = '<h1>1st!</h1>' + lorem
-    card2 = '<b>The second card of three total cards</b>' + lorem + lorem + lorem + lorem + lorem + lorem + lorem + lorem + lorem
-    card3 = '<b>Last and Final Card</b>' + lorem
-    cards = [card1, card2, card3]
+    # lorem = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tempus arcu. Morbi ut libero risus.</p>'
+    # card1 = '<h1>1st!</h1>' + lorem
+    # card2 = '<b>The second card of three total cards</b>' + lorem + lorem + lorem + lorem + lorem + lorem + lorem + lorem + lorem
+    # card3 = '<b>Last and Final Card</b>' + lorem
+    # cards = [card1, card2, card3]
 
     image_view_rect = CGRectInset(view.bounds, 20, 20) # image_view_rect = view.bounds
     image_view_rect.size.height = image_view_rect.size.height - navbar_height - 20
 
     cards.each do |card|
+      # puts "card: #{card}"
       puts rect_info image_view_rect
       @my_scroll_view.addSubview CardView.create(card, image_view_rect)
 
@@ -41,11 +42,39 @@ class DeckViewController < UIViewController
     end
   end
 
+  # def viewDidAppear(animated)
+
+    # http://stackoverflow.com/questions/728014/uiscrollview-paging-horizontally-scrolling-vertically
+    # scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * NumberOfPages, 1);
+
+
+  # end
+
   def selected_file(filename)
     @filename = filename
   end
 
   private
+
+  def get_cards(filename)
+    html = MarkdownConverter.deck_file_to_html(@filename)
+    elz = MarkdownConverter.elements_from_html(html)
+    puts "elz: #{elz.count}"
+    categories = CardGetter.getCards(elz)
+    puts "categories: #{categories.count}"
+    pages = []
+
+    categories.each do |category|
+      html = ''
+      html << category[:category] if category[:category]
+      category[:cards].each do |card|
+        html << card
+      end
+      pages << html
+    end
+
+    pages
+  end
 
   def rect_info(r)
     "origin(x=#{r.origin.x}, y=#{r.origin.y}) size(#{r.size.width} x #{r.size.height})"
