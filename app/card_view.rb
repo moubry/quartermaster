@@ -6,6 +6,8 @@ class CardView
   def self.create(markdown, frame)
     webview = UIWebView.alloc.initWithFrame(frame)
     webview.clipsToBounds = true
+    webview.setBackgroundColor(UIColor.clearColor)
+    webview.setOpaque(false)
 
     html = get_html_from_markdown(markdown)
     add_html_to_webview(webview, html)
