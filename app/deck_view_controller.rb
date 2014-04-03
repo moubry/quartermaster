@@ -6,8 +6,7 @@ class DeckViewController < UIViewController
   def viewDidLoad
     super
 
-    cards = get_cards(@filename)
-    puts "got #{cards.count} cards"
+    cards = Cards.from_filename(@filename, :type => :category_cards)
 
     number_of_pages = cards.count
     navbar_height = navigationController.navigationBar.frame.size.height
@@ -44,28 +43,6 @@ class DeckViewController < UIViewController
 
   def selected_file(filename)
     @filename = filename
-  end
-
-  private
-
-  def get_cards(filename)
-    html = MarkdownConverter.deck_file_to_html(@filename)
-    elz = MarkdownConverter.elements_from_html(html)
-    puts "elz: #{elz.count}"
-    categories = CardGetter.getCards(elz)
-    puts "categories: #{categories.count}"
-    pages = []
-
-    categories.each do |category|
-      html = ''
-      html << category[:category] if category[:category]
-      category[:cards].each do |card|
-        html << card
-      end
-      pages << html
-    end
-
-    pages
   end
 
   # for debugging
