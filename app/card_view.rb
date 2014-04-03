@@ -19,7 +19,8 @@ class CardView
       <style>
         * { box-sizing: border-box; }
         html {
-          background-color: rgb(232, 196, 231);
+          //background-color: rgb(232, 196, 231);
+          background-color: white;
         }
         body {
           word-wrap:break-word;
@@ -28,16 +29,19 @@ class CardView
           font-family:Georgia;
         }
         h1, h2, h3, h4, h5 {
-          font-family:Avenir;
+          font-family: Avenir, Helvetica, Arial, sans-serif;
         }
         pre, code {
-          font-family:Courier;
+          font-family: Menlo, Courier, monospace;
         }
         .card {
-          //color: #edc;
-          //background-color: #422;
           padding: 10px;
         }
+
+        // decrease the default sizes
+        h3 { font-size: 14px; }
+        p { font-size: 12px; }
+        pre, code { font-size: 10px; }
       </style>
     </head>
     '
