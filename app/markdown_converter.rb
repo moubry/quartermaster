@@ -37,13 +37,6 @@ class MarkdownConverter
     html = markdown_to_html(md)
   end
 
-  # cards = []
-  # elz.each do |e|
-  #   puts e.to_s
-  #   cards << e
-  # end
-  # html = cards.collect(&:to_html).join('')
-  # html
   def self.elements_from_html(html)
     doc = Wakizashi::HTML('<html><body>' + html + '</body></html>')
     elz = doc.xpath('/html/body/*')
