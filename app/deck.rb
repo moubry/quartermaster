@@ -1,5 +1,5 @@
 class Deck
-  attr_accessor :title, :author, :intro, :filename
+  attr_accessor :title, :author, :intro, :filename, :cards
 
   def initialize(attrs = {})
     attrs.each do |k,v|

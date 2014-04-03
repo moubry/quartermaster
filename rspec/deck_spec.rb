@@ -6,7 +6,8 @@ describe Deck, 'when first created' do
     :title,
     :author,
     :intro,
-    :filename
+    :filename,
+    :cards
   ]
 
   attrs.each do |attr|
@@ -21,7 +22,8 @@ describe Deck, 'initialized with attributes' do
     title: 'Ruby on Rails',
     author: 'Sean Moubry',
     intro: '<p>Ruby is a programming language.</p><p>Rails is a web framework.</p>',
-    filename: 'ruby_on_rails.md'
+    filename: 'RubyOnRails.md',
+    cards: []
   }
 
   subject { Deck.new(attrs) }

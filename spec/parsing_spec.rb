@@ -32,42 +32,33 @@ describe 'CardGetter.getCards()' do
     @elements = MarkdownConverter.elements_from_html(test_html)
   end
 
-  # it 'returns categories with cards (happy path)' do
-  #   cards = CardGetter.getCards(@elements)
-  #   cards.should == [
-  #     {
-  #       category: '<h2>Basics</h2>',
-  #       cards: [
-  #         '<h3>Everything in Ruby is an...</h3>',
-  #         '<p>object</p>',
-  #         '<p>Even simple numeric literals!</p>',
-  #         '<h3>Should Ruby code have lots of comments?</h3>',
-  #         '<p>No!</p>',
-  #         '<p>Good code is like a good joke: it needs no explanation.</p>'
-  #       ]
-  #     },
-  #     {
-  #       category: '<h2>factory_girl</h2>',
-  #       cards: [
-  #         '<h3>What is the difference between create, build, and generate?</h3>',
-  #         '<p>create makes a saved instance.</p>',
-  #         '<p>build makes an unsaved instance.</p>',
-  #         '<p>generate makes a sequenced instance.</p>'
-  #       ]
-  #     }
-  #   ]
-  # end
+  it 'returns categories with cards (happy path)' do
+    puts @elements.count
+    cards = CardGetter.getCards(@elements)
+    cards.should == [
+      Card.new(
+        category: '<h2>Basics</h2>',
+        front: '<h3>Everything in Ruby is an...</h3>',
+        back: '<p>object</p><p>Even simple numeric literals!</p>'
+      ),
+      Card.new(
+        category: '<h2>Basics</h2>',
+        front: '<h3>Should Ruby code have lots of comments?</h3>',
+        back: '<p>No!</p><p>Good code is like a good joke: it needs no explanation.</p>'
+      ),
+      Card.new(
+        category: '<h2>factory_girl</h2>',
+        front: '<h3>What is the difference between create, build, and generate?</h3>',
+        back: '<p>create makes a saved instance.</p><p>build makes an unsaved instance.</p><p>generate makes a sequenced instance.</p>'
+      )
+    ]
+  end
 
-  it 'returns an empty category for one h2' do
+  it 'returns an empty array for a category without cards' do
     html = '<h2>Basics</h2>'
     elements = MarkdownConverter.elements_from_html(html)
     cards = CardGetter.getCards(elements)
-    cards.should == [
-      {
-        category: '<h2>Basics</h2>',
-        cards: []
-      }
-    ]
+    cards.should == []
   end
 
   it 'returns an empty array for empty elements' do

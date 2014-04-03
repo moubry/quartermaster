@@ -1,49 +1,54 @@
 class CardGetter
   def self.getCards(elements)
-    categories = []
+    cards = []
 
-    # initial everything bucket (uncategoried by default)
-    current_category = {
-      category: nil,
-      cards: []
-    }
+    current_category = nil
+    current_card = nil
 
     elements.each do |e|
 
-      if e.name == 'h2'
+      if category?(e)
 
-        # uhh... do we already have a category?
-        if current_category
-          # quick get rid of him, fast
-          categories << current_category
-          # clean up
-          current_category = nil
+        if current_card
+          cards << current_card
+          current_card = nil
         end
 
-        # heeeey, nice to meet you category!
-        current_category = {
-          category: e.to_html,
-          cards: []
-        }
+        current_category = e.to_html
 
-      else
+      elsif front?(e)
 
-        current_category[:cards] << e.to_html
+        if current_card
+          cards << current_card
+          current_card = nil
+        end
+
+        current_card = Card.new(front: e.to_html, category: current_category)
+
+      else # must be back content
+
+        current_card.add_to_back(e.to_html)
 
       end
 
     end if elements
 
-    # closing time, last category! everyone out!
-    categories << current_category
-
-    # remove uncategorized if it's empty
-    if uncategorized = categories && categories.first
-      if uncategorized[:cards].count == 0
-        categories.shift
-      end
+    # last card
+    if current_card
+      cards << current_card
+      current_card = nil
     end
 
-    categories
+    cards
   end
+
+
+  def self.category?(e)
+    e.name == 'h2'
+  end
+
+  def self.front?(e)
+    e.name == 'h3'
+  end
+
 end
